@@ -8,9 +8,11 @@ def linearSearch(a, N, key):
     while i < N and a[i] != key:
         i += 1
     
-    if i < N:
+    if i < N: # the while loop was broken due to the 2nd condition,
+              # meaning it found an a[i] which equals to the key.
         return i
-    else:
+    else: # the while loop was broken 
+          # because it couldn't find an a[i] matching with the key.
         return 'Not Found'
     
 # with sorted arr in ascending order

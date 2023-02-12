@@ -1,22 +1,13 @@
 '''
-Repeatedly swapping the consecutive items 
-if they are in the wrong order.
-
-The highest number will bubble its way to the right
-with each iteration.
-'''
-'''
 <pseudocode>
-for i from 0 to N-1 # repeat for the length of an array
-    for j from 0 to N-i-1 #Last i elements are already in place
-        if a[j]> a[j+1]
-            swap (a[j], a[j+1])
+for i: N-1 -> 1
+    for j: 0 -> i-1
+        if a[j] > a[j+1]
+            a[j] <-> a[j+1]
 '''
-
-def bubbleSort(arr):
-    N = len(arr)
-
-    for i in range(N):
-        for j in range(N-i-1): #traverse the arr
-            if arr[j] > arr[j+1]: #if the element found is greater than the next one,
-                arr[j], arr[j+1] = arr[j+1], arr[j] #swap
+#ascending
+def BubbleSort(a, N): # a for List, N for len(a)
+    for i in range(N-1, 0, -1):
+        for j in range(0, i):
+            if a[j] > a[j+1]:
+                a[j], a[j+1] = a[j+1], a[j]

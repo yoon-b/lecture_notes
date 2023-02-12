@@ -12,7 +12,7 @@ for i from 0 to N-1 # repeat for the length of an array
         if a[j]> a[j+1]
             swap (a[j], a[j+1])
 '''
-
+#ascending
 def bubbleSort(arr):
     N = len(arr)
 
