@@ -20,6 +20,4 @@ for i in range(E):
 
     adjL[v1].append(v2)
     adjL[v2].append(v1)
-
-
-# assignment: code for DFS search
+    
