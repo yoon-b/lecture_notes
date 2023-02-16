@@ -3,7 +3,7 @@ N Queen is the problem of placing N chess queens on an N*N chessboard
 so that no two queens attack each other.
 
 goals
-1. Find an arrangemen where no 2 queens attack each other. (check for clashes with existing queen)
+1. Find an arrangement where no 2 queens attack each other. (check for clashes with existing queen)
 2. There should be only one queen in each column. 
 
 https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
