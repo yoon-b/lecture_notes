@@ -8,7 +8,8 @@ class Solution:
 
         # base case
         if len(nums) == 1:  # having 1 value -> having 1 permutation only
-            return [nums[:]]  # this is faster than [nums.copy()]
+            return [nums[:]]  # use a copy of nums because it'll be modified
+                              # this is faster than [nums.copy()]
                               # return as a list in a list (hint from the problem)
 
         for i in range(len(nums)):  # traverse every value in nums
@@ -19,7 +20,11 @@ class Solution:
             for perm in perms:
                 perm.append(n)  # adding back the popped value from above
             
-            result.extend(perms)
-            nums.append(n)  # clean up
+            result.extend(perms)  # use extend() to put in list type elements
+                                  # a = [[a]], b = rlt[]
+                                  # b.extend(a) = [[a]], b.append[a] = [[[a]]]
+            nums.append(n)  # clean up. add back the popped element
         
-        return result
+        return result  # sub-results created by recursion will be used as perms 
+                       # in the enclosing function.
+
