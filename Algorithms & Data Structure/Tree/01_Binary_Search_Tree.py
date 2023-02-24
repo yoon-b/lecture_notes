@@ -38,7 +38,25 @@ class TreeNode:
         if self.right:
             self.right.postorderTraversal()
         print(self.value)
-    
+
+#from collections import deque    
+    def levelorderTraversal(self, root: Optional[TreeNode]):
+        if not root:
+            return None        
+        Q = deque([root])
+        levels = [[root.val]]
+        temp = deque()
+        while Q:
+            node = Q.popleft()
+            if node.left: temp.append(node.left)
+            if node.right: temp.append(node.right)
+
+            if not Q:
+                if temp:  # remember to check this
+                    levels.append([n.val for n in temp])
+                Q = temp  # go to the next level
+                temp = deque()  # reset
+
     def find(self, value):
         if value < self.value:
             if self.left is None:
